@@ -1,0 +1,5 @@
+docker pull mcr.microsoft.com/mssql/server
+
+docker run --name SqlServer -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=1q@2w3#e4$r" -p 1433:1433 -d mcr.microsoft.com/mssql/server
+
+Server=localhost,1433;Database=<NAME>;User ID=sa;Password=1q@2w3#e4$r
