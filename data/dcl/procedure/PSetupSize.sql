@@ -1,5 +1,7 @@
 Create Procedure PSetupSize
 	@ProductId Int
 As
-	Insert Into Variant(VariationTypeId, ProductId, [Value])
-		Values(2, @ProductId, 'P');
+	Insert Into Variant(VariationType, ProductId, [Value])
+		Values('Size', @ProductId, 'P');
+
+Drop Proc PSetupSize;

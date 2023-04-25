@@ -15,3 +15,5 @@ As
 				
 		Set NoCount Off
 	End
+	
+Drop Trigger TSetupVariant;

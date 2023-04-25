@@ -1,4 +1,4 @@
 Create Table Brand (
-    Id 		Int,
-    Name 	Nvarchar(255)
+    Id Int Identity(1, 1),
+    Name Nvarchar(255)
 );
