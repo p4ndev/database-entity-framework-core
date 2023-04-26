@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using DatabaseFirst.Models;
 
-namespace DatabaseFirst.Provider;
+namespace DatabaseFirst.Providers;
 
-public partial class PlainContext : DbContext {
+public partial class DBFContext : DbContext {
 
-    public PlainContext() { }
+    public DBFContext() { }
 
-    public PlainContext(DbContextOptions<PlainContext> options) : base(options) { }
+    public DBFContext(DbContextOptions<DBFContext> options) : base(options) { }
 
     public virtual DbSet<Brand>             Brands              { get; set; }
     public virtual DbSet<Product>           Products            { get; set; }

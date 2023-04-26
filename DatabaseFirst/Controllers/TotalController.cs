@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using DatabaseFirst.Provider;
+using DatabaseFirst.Providers;
 using DatabaseFirst.Models;
 
 namespace DatabaseFirst.Controllers;
@@ -9,9 +9,9 @@ namespace DatabaseFirst.Controllers;
 [Route("[controller]")]
 public class TotalController : ControllerBase{
 
-    private readonly PlainContext _context;
+    private readonly DBFContext _context;
 
-    public TotalController(PlainContext context) => _context = context;
+    public TotalController(DBFContext context) => _context = context;
 
     [HttpGet("Product")]
     public async Task<long> GetProductCount()
