@@ -1,11 +1,7 @@
 ﻿namespace CodeFirst.Models;
 
-public class ProductVariant {
+public class ProductVariant : BaseModel {
 
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    
-    public int Id           { get; set; }
     public int ProductId    { get; set; }
     public int VariantId    { get; set; }
 
@@ -14,5 +10,7 @@ public class ProductVariant {
 
     [ForeignKey("VariantId")]
     public Variant? Variant { get; set; }
+
+    public ProductVariant() { }
 
 }

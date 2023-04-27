@@ -5,11 +5,38 @@
 namespace CodeFirst.Migrations
 {
     /// <inheritdoc />
-    public partial class Product_Variant : Migration
+    public partial class Setup : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Brand",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Brand", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Variant",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    VariantType = table.Column<int>(type: "int", nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Variant", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Product",
                 columns: table => new
@@ -29,20 +56,6 @@ namespace CodeFirst.Migrations
                         principalTable: "Brand",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Variant",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    VariantType = table.Column<int>(type: "int", nullable: false),
-                    Value = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Variant", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -72,6 +85,12 @@ namespace CodeFirst.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "UQ_Brand",
+                table: "Brand",
+                column: "Name",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Product_BrandId",
                 table: "Product",
                 column: "BrandId");
@@ -98,6 +117,9 @@ namespace CodeFirst.Migrations
 
             migrationBuilder.DropTable(
                 name: "Variant");
+
+            migrationBuilder.DropTable(
+                name: "Brand");
         }
     }
 }

@@ -1,9 +1,9 @@
 Alter Table Variant 
-	Alter Column VariationType Nvarchar(100) Not Null;
+	Alter Column VariationType Int Not Null;
 
 Alter Table Variant
 	Add Constraint CHK_Variant_Type
-		Check (VariationType between 'Color' and 'Size');
+		Check (VariationType between 1 and 2);
 
 Alter Table Variant
 	Add Constraint PK_Variant Primary Key (Id);
@@ -12,9 +12,4 @@ Alter Table Variant
 	Alter Column [Value] Nvarchar(255) Not Null;
 
 Alter Table Variant
-	Alter Column ProductId Int Not Null;
-
-Alter Table Variant
-	Add Constraint FK_Variant_Product
-		Foreign Key (ProductId)
-			References Product(Id);
+	Add Constraint UQ_Variant Unique ([Value]);

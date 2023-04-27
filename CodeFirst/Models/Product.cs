@@ -1,19 +1,13 @@
 ﻿namespace CodeFirst.Models;
 
 [Table("Product")]
-public class Product{
-
-    public Product() { }
+public class Product : BaseModel {
 
     public Product(int brandId, string title, string description){
         Name = title;
         BrandId = brandId;
         Description = description;
     }
-
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int Id { get; set; }
 
     [Required]
     public int BrandId { get; set; }
@@ -29,5 +23,7 @@ public class Product{
 
     [InverseProperty("Product")]
     public ICollection<ProductVariant>? Variants { get; set; }
+
+    public Product() { }
 
 }

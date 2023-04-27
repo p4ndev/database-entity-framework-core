@@ -14,35 +14,43 @@ Scaffold-DbContext 'Server=localhost,1433;Database=Plain;User ID=sa;Password=1q@
 
 |---------------------------------------------------------------------------------------------|
 
+{ "type": 1, "value": "#000000" }
+{ "type": 2, "value": "P" }
+
+{ "type": 1, "value": "#FF0000" }
+{ "type": 1, "value": "#00FF00" }
+{ "type": 1, "value": "#0000FF" }
+
+{ "type": 2, "value": "M" }
+{ "type": 2, "value": "G" }
+
+|---------------------------------------------------------------------------------------------|
+
 {
-  "brandId": 3, "name": "Performance T-shirt",
+  "brandId": 3,
+  "name": "Performance T-shirt",
   "description": "Tecnologia Outlast, desenvolvida pela NASA, regula a temperatura corporal e proporciona conforto térmico."
 }
 
 {
-  "brandId": 4, "name": "Boxy Cropped",
+  "brandId": 4,
+  "name": "Boxy Cropped",
   "description": "Caimento mais estruturado e cropped, é ultra versátil e fica perfeito em composições com a calça wide leg e em looks mais despojados com legging ou shorts."
 }
 
 {
-  "brandId": 1, "name": "Tech T-Shirt",
+  "brandId": 1,
+  "name": "Tech T-Shirt",
   "description": "Tecnologia Insider, a Tech T-shirt é nossa releitura tech da camiseta básica masculina."
 }
 
 {
-  "brandId": 5, "name": "Casaco",
+  "brandId": 5,
+  "name": "Casaco",
   "description": "Nosso primeiro casaco masculino tem o design do clássico hoodie (ou moletom no bom português), com capuz e bolso frontal."
 }
 
 |---------------------------------------------------------------------------------------------|
-
-
-
-
-
-
-
-
 
 
 

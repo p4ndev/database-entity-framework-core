@@ -1,18 +1,16 @@
-Insert Into
-	Variant(VariationType, ProductId, [Value])
-Values
-	('Color', 1, '#00FF00'),
-	('Color', 1, '#FF0000'),
-	('Color', 1, '#FF00CC'),
-	('Color', 1, '#FFFFCC'),
-	('Color', 2, '#FF0000'),
-	('Color', 3, '#00FF00');
+Insert Into Variant(VariationType, [Value]) Values(1, '#000000');
+Insert Into Variant(VariationType, [Value]) Values(2, 'P');
 
 Insert Into
-	Variant(VariationType, ProductId, [Value])
+	Variant(VariationType, [Value])
 Values
-	('Size', 1, 'M'),
-	('Size', 2, 'M'),
-	('Size', 2, 'G'),
-	('Size', 2, 'GG'),
-	('Size', 3, 'M');
+	(1, '#FF0000'),
+	(1, '#00FF00'),
+	(1, '#0000FF');
+
+Insert Into
+	Variant(VariationType, [Value])
+Values
+	(2, 'M'),
+	(2, 'G'),
+	(2, 'GG');

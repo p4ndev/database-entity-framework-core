@@ -1,5 +1,6 @@
 Alter Table ProductVariant
-	Add Constraint PK_Product Primary Key (Id);
+	Add Constraint PK_ProductVariant 
+		Primary Key (Id);
 	
 Alter Table ProductVariant
 	Add Constraint DF_Initialization 

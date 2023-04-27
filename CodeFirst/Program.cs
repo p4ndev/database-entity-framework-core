@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using CodeFirst.Providers;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +8,11 @@ string? connectionString = builder.Configuration.GetConnectionString("CDFDatabas
 if (connectionString is null) throw new MissingFieldException(nameof(connectionString));
 builder.Services.AddDbContext<CDFContext>(o => o.UseSqlServer(connectionString));
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(o => 
+        o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles
+    );
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

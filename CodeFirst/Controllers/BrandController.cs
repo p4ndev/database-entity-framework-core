@@ -5,11 +5,9 @@ namespace CodeFirst.Controllers;
 
 [ApiController]
 [Route("brand")]
-public class BrandController : ControllerBase {
+public class BrandController : BaseController {
 
-    private readonly CDFContext _context;
-
-    public BrandController(CDFContext context) => _context = context;
+    public BrandController(CDFContext context) : base(context) { }
 
     [HttpGet]
     public async Task<IList<Brand>> Get()
