@@ -1,1 +1,0 @@
-Please visit the [WIKI](https://github.com/p4ndev/orm-dotnet-core/wiki).
